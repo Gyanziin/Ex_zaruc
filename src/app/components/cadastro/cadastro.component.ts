@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router'; // Importe o Router do Angular
 
 @Component({
   selector: 'app-cadastro',
@@ -11,7 +12,7 @@ export class CadastroComponent implements OnInit {
   userForm: FormGroup;
   mensagemSucesso: string | null = null;
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private router: Router) {
     this.userForm = new FormGroup({
       id: new FormControl(''),
       nome: new FormControl('', [Validators.required]),
@@ -47,6 +48,9 @@ export class CadastroComponent implements OnInit {
 
     this.http.post(url, dados).subscribe(
       (response) => {
+        // Após o cadastro bem-sucedido, redirecione para a página de login
+        this.router.navigate(['/login']);
+
         this.mensagemSucesso = 'Dados cadastrados com sucesso';
         this.userForm.reset();
         setTimeout(() => this.mensagemSucesso = null, 5000);

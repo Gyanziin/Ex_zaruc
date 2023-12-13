@@ -1,17 +1,21 @@
 <div class="container">
   <main>
     <h1>Login</h1>
-    <form>
+    <div>
       <div class="usuario">
-        <label for="username">Usuário:</label>
-        <input [(ngModel)]="requestLogin.login" id="username" name="username" type="text" required>
+        <label>Nome de usuário:</label>
+        <input [(ngModel)]="username" type="text" required/>
       </div>
       <div class="senha">
-        <label for="password">Senha:</label>
-        <input [(ngModel)]="requestLogin.password" id="password" name="password" type="password" required>
+        <label>Senha:</label>
+        <input [(ngModel)]="password" type="password" required/>
       </div>
-      <button (click)="doLogin()" type="submit">Login</button>
-    </form>
+      <button (click)="login()">Entrar</button>
+      <p *ngIf="error">{{ error }}</p>
+    </div>
+    <div class="link">
+      <a routerLink="/cadastro">Cadastrar usuario</a>
+    </div>
   </main>
 </div>
 

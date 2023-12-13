@@ -1,30 +1,29 @@
 import { Component } from '@angular/core';
-import { RequestLogin } from '../../resouces/models/RequestLogin';
-import { LoginService } from '../../services/login.service';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
 })
 export class LoginComponent {
-  public requestLogin!: RequestLogin
+  username: string = '';
+  password: string = '';
+  error: string = '';
 
-  constructor(private loginService: LoginService) {}
+  constructor(private authService: AuthService) {}
 
-  ngOnInit(): void {
-    this.requestLogin = new RequestLogin()
+  login() {
+    this.authService.login(this.username, this.password).subscribe(
+      (result) => {
+        if (result.success) {
+        } else {
+          this.error = result.message;
+        }
+      },
+      (error) => {
+        this.error = 'Erro ao verificar usuário';
+      }
+    );
   }
-
-  public doLogin(): void {
-    this.loginService.doLogin(this.requestLogin).subscribe(data => {
-      console.log('cade poha')
-    },
-    error => {
-      console.error(error)
-    }
-    )
-  }
-
 }
-

@@ -9,6 +9,7 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
 import { CadastroComponent } from './components/cadastro/cadastro.component';
 import { ListUserComponent } from './components/list-user/list-user.component';
+import { AuthGuard } from './services/auth.guard';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { ListUserComponent } from './components/list-user/list-user.component';
     ReactiveFormsModule
   ],
   providers: [
+    AuthGuard,
     provideClientHydration()
   ],
   bootstrap: [AppComponent]

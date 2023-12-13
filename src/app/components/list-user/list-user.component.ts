@@ -9,7 +9,7 @@ import { AuthService } from '../../services/auth.service';
 })
 export class ListUserComponent {
   usuarios: Usuario[] = [];
-  usuarioEdit: Usuario = { id: 0, nome: '', email: '', senha: '' };
+  usuarioEdit: Usuario = { id: 0, name: '', email: '', password: '' };
 
   constructor(private authService: AuthService) {
     this.getUsuarios();

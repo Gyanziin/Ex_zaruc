@@ -4,9 +4,9 @@
     <ul id="user-list">
       <li *ngFor="let usuario of usuarios">
         <div class="conteudo">
-          <strong>Nome: {{ usuario.nome }}</strong> -
+          <strong>Nome: {{ usuario.name }}</strong> -
           <strong>E-mail: {{ usuario.email }}</strong> -
-          <strong>Senha: {{ usuario.senha }}</strong> -
+          <strong>Senha: {{ usuario.password }}</strong> -
         </div>
         <div class="botoes">
           <button (click)="removeUsuario(usuario)" class="excluir">Excluir</button>
