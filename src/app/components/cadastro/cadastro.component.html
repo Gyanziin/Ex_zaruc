@@ -1,0 +1,29 @@
+<div class="container">
+  <main>
+    <h2>Cadastro de usuario</h2>
+    <form (ngSubmit)="submit()" [formGroup]="userForm" #formDir="ngForm">
+      <div class="nome">
+        <label>Digite seu nome de Usuario:</label>
+        <input required type="text" formControlName="nome">
+        <div *ngIf="nome.invalid && formDir.submitted" class="validation-error">
+          <p>O Campo é obrigatorio!</p>
+        </div>
+      </div>
+      <div class="nome">
+        <label>Digite seu E-mail</label>
+        <input required type="email" formControlName="email">
+        <div *ngIf="email.invalid && formDir.submitted" class="validation-error">
+          <p>O Campo é obrigatorio!</p>
+        </div>
+      </div>
+      <div class="nome">
+        <label>Digite sua senha</label>
+        <input required type="password" formControlName="senha">
+        <div *ngIf="senha.invalid && formDir.submitted" class="validation-error">
+          <p>O Campo é obrigatorio!</p>
+        </div>
+      </div>
+      <button type="submit">Cadastrar</button>
+    </form>
+  </main>
+</div>

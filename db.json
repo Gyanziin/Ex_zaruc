@@ -1,0 +1,23 @@
+{
+  "usuarios": [
+    {
+      "id": 1,
+      "name": "Gyanziin",
+      "email": "gyanhugo1@gmail.com",
+      "password": "Gyanziin.1"
+    },
+    {
+      "id": 2,
+      "name": "adryel",
+      "email": "mauricio@gmail.com",
+      "password": "anedina.1"
+    }
+  ],
+  "login": [
+    {
+      "login": "mauricio@gmail.com",
+      "password": "anedina.1",
+      "id": 1
+    }
+  ]
+}

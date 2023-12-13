@@ -1,0 +1,30 @@
+/* You can add global styles to this file, and also import other style files */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+  text-decoration: none;
+  list-style: none;
+}
+
+body {
+  background-image: url('../src/assets/images/image\ 8.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 100vh; /* Garante que o corpo ocupe toda a altura da tela */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  padding: 80px 4%;
+  max-width: 1280px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

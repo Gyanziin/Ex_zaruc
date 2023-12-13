@@ -1,0 +1,19 @@
+<div class="container">
+  <main>
+    <h2>Lista de Usuários</h2>
+    <ul id="user-list">
+      <li *ngFor="let usuario of usuarios">
+        <div class="conteudo">
+          <strong>Nome: {{ usuario.nome }}</strong> -
+          <strong>E-mail: {{ usuario.email }}</strong> -
+          <strong>Senha: {{ usuario.senha }}</strong> -
+        </div>
+        <div class="botoes">
+          <button (click)="removeUsuario(usuario)" class="excluir">Excluir</button>
+        </div>
+      </li>
+    </ul>
+  </main>
+</div>
+
+
